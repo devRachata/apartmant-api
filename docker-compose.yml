@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  # Database
+  mysql:
+    image: mysql:latest
+    container_name: apartmant-db
+    restart: always
+    environment: 
+      MYSQL_DATABASE: 'apartmant'
+      MYSQL_ROOT_PASSWORD: 'P@ssw0rd'
+    ports: 
+      - 1234:3306
+    expose: 
+      - 1234
+    volumes: 
+      - ./data:/var/lib/mysql
